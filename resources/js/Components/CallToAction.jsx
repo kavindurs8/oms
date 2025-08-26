@@ -79,28 +79,28 @@ const CallToAction = () => {
                 {/* Features List */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-3xl mx-auto">
                     <div className="flex items-center justify-center md:justify-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
                             <span className="text-white text-sm font-bold">1</span>
                         </div>
                         <span className="text-gray-700 text-base">Book a free 10-minute demo</span>
                     </div>
 
                     <div className="flex items-center justify-center md:justify-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
                             <span className="text-white text-sm font-bold">2</span>
                         </div>
                         <span className="text-gray-700 text-base">See how Storemate fits your business</span>
                     </div>
 
                     <div className="flex items-center justify-center md:justify-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
                             <span className="text-white text-sm font-bold">3</span>
                         </div>
                         <span className="text-gray-700 text-base">Get 30 days free trial</span>
                     </div>
 
                     <div className="flex items-center justify-center md:justify-start space-x-3">
-                        <div className="flex-shrink-0 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                        <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#013387' }}>
                             <span className="text-white text-sm font-bold">4</span>
                         </div>
                         <span className="text-gray-700 text-base">Scale confidently with Storemate OMS</span>
@@ -113,12 +113,30 @@ const CallToAction = () => {
                         href="https://welcome.oms.storemate.cloud/register"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium text-base hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
+                        className="text-white px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center"
+                        style={{
+                            backgroundColor: '#013387',
+                            ':hover': { backgroundColor: '#001f5c' }
+                        }}
+                        onMouseEnter={(e) => e.target.style.backgroundColor = '#001f5c'}
+                        onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}
                     >
-                        Try For Free
+                        Start a Free Trial
                     </a>
 
-                    <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-medium text-base hover:bg-blue-50 transition-all duration-300 inline-flex items-center space-x-2">
+                    <button
+                        className="border-2 px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 inline-flex items-center space-x-2"
+                        style={{
+                            borderColor: '#013387',
+                            color: '#013387'
+                        }}
+                        onMouseEnter={(e) => {
+                            e.target.style.backgroundColor = '#f0f4ff';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.target.style.backgroundColor = 'transparent';
+                        }}
+                    >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                         </svg>

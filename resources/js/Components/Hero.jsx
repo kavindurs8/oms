@@ -161,14 +161,14 @@ export default function Hero() {
                         {/* Column 1: CTA Buttons with hover animations */}
                         <div className="flex flex-col items-center gap-3">
                             <Link
-                                href="#"
+                                href="https://welcome.oms.storemate.cloud/register"
                                 className="rounded-md px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:shadow-lg hover:scale-105 text-center transition-all duration-300 transform hover:-translate-y-1"
                                 style={{backgroundColor: '#006daf'}}
                             >
                                 Start a Free Trial
                             </Link>
                             <div className="text-sm font-semibold">
-                                or <Link href="#" className="ml-1 font-bold hover:opacity-80 hover:scale-110 transition-all duration-200" style={{color: '#006daf'}}>Contact us</Link>
+                                or <Link href="/contact-us" className="ml-1 font-bold hover:opacity-80 hover:scale-110 transition-all duration-200" style={{color: '#006daf'}}>Contact us</Link>
                             </div>
                         </div>
 

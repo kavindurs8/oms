@@ -276,9 +276,12 @@ export default function Pricing() {
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
                         Need a custom solution? We offer enterprise packages tailored to your specific requirements.
                     </p>
-                    <button className="bg-gray-800 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors">
+                    <a
+                        href="/contact-us"
+                        className="inline-block bg-gray-800 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors"
+                    >
                         Contact Sales
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
