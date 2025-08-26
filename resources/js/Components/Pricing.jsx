@@ -103,7 +103,22 @@ export default function Pricing() {
                 <div className={`text-center mb-12 transition-all duration-1000 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                    {/* Subtitle with same style as POWERING label */}
+                    <div className="mb-4">
+                        <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
+                            color: '#006daf',
+                            backgroundColor: '#ffe6daff'
+                        }}>
+                            FLEXIBLE PRICING OPTIONS
+                        </span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4" style={{
+                        fontWeight: '750',
+                        fontStretch: 'ultra-condensed',
+                        letterSpacing: '-0.03em',
+                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
+                    }}>
                         Choose Your Plan
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -116,9 +131,11 @@ export default function Pricing() {
                     {pricingPlans.map((plan, index) => (
                         <div
                             key={plan.name}
-                            className={`relative rounded-2xl p-8 shadow-lg transition-all duration-700 hover:scale-105 hover:shadow-xl ${
-                                plan.bgColor
-                            } ${
+                            className={`relative rounded-2xl p-8 transition-all duration-700 hover:scale-105 hover:shadow-xl border-2 ${
+                                plan.popular
+                                    ? 'border-blue-300 shadow-blue-100'
+                                    : 'border-gray-200 hover:border-blue-200'
+                            } ${plan.bgColor} ${
                                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                             }`}
                             style={{
@@ -141,7 +158,8 @@ export default function Pricing() {
 
                                 {/* Price */}
                                 <div className="mb-2">
-                                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                                    <span className="text-sm text-gray-600 font-medium">LKR </span>
+                                    <span className="text-4xl font-bold text-gray-900">{plan.price.replace('LKR ', '')}</span>
                                     <span className="text-lg text-gray-600">{plan.period}</span>
                                 </div>
                             </div>
@@ -197,7 +215,10 @@ export default function Pricing() {
                 <div className={`text-center mt-12 transition-all duration-1000 delay-500 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>
-                    <p className="text-gray-600 mb-4">
+                    <h3 className="text-4xl font-bold text-gray-900 mb-4">
+                        Need Something More?
+                    </h3>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
                         Need a custom solution? We offer enterprise packages tailored to your specific requirements.
                     </p>
                     <button className="bg-gray-800 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors">

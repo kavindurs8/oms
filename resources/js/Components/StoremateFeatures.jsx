@@ -20,17 +20,21 @@ export default function StoremateFeatures() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
                     <div className={`transition-all duration-1200 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-                        {/* Small Blue Title */}
-                        <div className="mb-6">
-                            <div className="w-8 h-1 mb-3" style={{backgroundColor: '#006daf'}}></div>
-                            <p className="text-base font-medium" style={{color: '#006daf'}}>
-                                Storemate Order Management System
-                            </p>
+                        {/* Subtitle with same style as POWERING label */}
+                        <div className="mb-4">
+                            <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
+                                color: '#006daf',
+                                backgroundColor: '#ffe6daff'
+                            }}>
+                                STOREMATE ORDER MANAGEMENT
+                            </span>
                         </div>
 
                         {/* Main Heading */}
-                        <h1 className="text-4xl md:text-5xl font-black mb-8" style={{
-                            fontWeight: '900',
+                        <h1 className="text-3xl md:text-4xl font-black mb-8" style={{
+                            fontWeight: '750',
+                            fontStretch: 'ultra-condensed',
+                            letterSpacing: '-0.03em',
                             fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                             color: '#2D3748',
                             lineHeight: '1.1'
