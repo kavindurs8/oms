@@ -1,0 +1,210 @@
+import { useState, useEffect } from 'react';
+
+export default function Pricing() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 500);
+
+        return () => {
+            clearTimeout(timer);
+        };
+    }, []);
+
+    const pricingPlans = [
+        {
+            name: "Free",
+            subtitle: "Free Subscription",
+            price: "LKR 0",
+            period: "/month",
+            inquiries: "500 inquiries/month",
+            locations: "2 Business Locations",
+            deliveryCompanies: "1 Delivery Company",
+            features: [
+                { name: "Inquiry Management", included: true },
+                { name: "COD Sync", included: true },
+                { name: "WhatsApp Form", included: false },
+                { name: "Dedicated Server", included: false },
+                { name: "Customizations", included: false }
+            ],
+            buttonText: "Try for Free",
+            buttonStyle: "bg-gray-100 text-gray-800 hover:bg-gray-200",
+            bgColor: "bg-orange-50",
+            popular: false
+        },
+        {
+            name: "Starter",
+            subtitle: "Starter Subscription",
+            price: "LKR 5,000",
+            period: "/month",
+            inquiries: "500 inquiries/month",
+            locations: "2 Business Locations",
+            deliveryCompanies: "1 Delivery Company",
+            features: [
+                { name: "Inquiry Management", included: true },
+                { name: "COD Sync", included: true },
+                { name: "WhatsApp Form", included: true },
+                { name: "Dedicated Server", included: false },
+                { name: "Customizations", included: false }
+            ],
+            buttonText: "Get Started",
+            buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
+            bgColor: "bg-blue-50",
+            popular: true
+        },
+        {
+            name: "Business",
+            subtitle: "Business Subscription",
+            price: "LKR 12,000",
+            period: "/month",
+            inquiries: "5,000 inquiries/month",
+            locations: "5 Business Locations",
+            deliveryCompanies: "2 Delivery Companies",
+            features: [
+                { name: "Inquiry Management", included: true },
+                { name: "COD Sync", included: true },
+                { name: "WhatsApp Form", included: true },
+                { name: "Dedicated Server", included: false },
+                { name: "Customizations", included: false }
+            ],
+            buttonText: "Get Started",
+            buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
+            bgColor: "bg-purple-50",
+            popular: false
+        },
+        {
+            name: "Premium",
+            subtitle: "Premium Subscription",
+            price: "LKR 25,000",
+            period: "/month",
+            inquiries: "50,000 inquiries/month",
+            locations: "5 Business Locations",
+            deliveryCompanies: "10 Delivery Companies",
+            features: [
+                { name: "Inquiry Management", included: true },
+                { name: "COD Sync", included: true },
+                { name: "WhatsApp Form", included: true },
+                { name: "Dedicated Server", included: false },
+                { name: "Customizations", included: false }
+            ],
+            buttonText: "Get Started",
+            buttonStyle: "bg-blue-600 text-white hover:bg-blue-700",
+            bgColor: "bg-green-50",
+            popular: false
+        }
+    ];
+
+    return (
+        <div className="relative py-16 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+                {/* Header */}
+                <div className={`text-center mb-12 transition-all duration-1000 ${
+                    isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`}>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                        Choose Your Plan
+                    </h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Select the perfect plan for your business needs and start managing your orders efficiently
+                    </p>
+                </div>
+
+                {/* Pricing Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {pricingPlans.map((plan, index) => (
+                        <div
+                            key={plan.name}
+                            className={`relative rounded-2xl p-8 shadow-lg transition-all duration-700 hover:scale-105 hover:shadow-xl ${
+                                plan.bgColor
+                            } ${
+                                isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                            }`}
+                            style={{
+                                animationDelay: `${index * 200}ms`
+                            }}
+                        >
+                            {/* Popular Badge */}
+                            {plan.popular && (
+                                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                    <div className="bg-blue-600 text-white text-sm font-medium px-4 py-1 rounded-full">
+                                        Most Popular
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Plan Header */}
+                            <div className="text-center mb-6">
+                                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                                <p className="text-sm text-gray-600 mb-4">{plan.subtitle}</p>
+
+                                {/* Price */}
+                                <div className="mb-2">
+                                    <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                                    <span className="text-lg text-gray-600">{plan.period}</span>
+                                </div>
+                            </div>
+
+                            {/* Plan Details */}
+                            <div className="space-y-3 mb-6">
+                                <div className="text-sm text-gray-700">
+                                    <div className="font-medium">{plan.inquiries}</div>
+                                </div>
+                                <div className="text-sm text-gray-700">
+                                    <div className="font-medium">{plan.locations}</div>
+                                </div>
+                                <div className="text-sm text-gray-700">
+                                    <div className="font-medium">{plan.deliveryCompanies}</div>
+                                </div>
+                            </div>
+
+                            {/* Features List */}
+                            <div className="space-y-3 mb-8">
+                                {plan.features.map((feature, featureIndex) => (
+                                    <div key={featureIndex} className="flex items-center">
+                                        {feature.included ? (
+                                            <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                                                <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                        ) : (
+                                            <div className="flex-shrink-0 w-5 h-5 flex items-center justify-center">
+                                                <svg className="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                        )}
+                                        <span className="ml-3 text-sm text-gray-700 font-medium">
+                                            {feature.name}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* CTA Button */}
+                            <button
+                                className={`w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 ${plan.buttonStyle}`}
+                            >
+                                {plan.buttonText}
+                            </button>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Bottom CTA */}
+                <div className={`text-center mt-12 transition-all duration-1000 delay-500 ${
+                    isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`}>
+                    <p className="text-gray-600 mb-4">
+                        Need a custom solution? We offer enterprise packages tailored to your specific requirements.
+                    </p>
+                    <button className="bg-gray-800 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+}
