@@ -4,6 +4,10 @@ import { Head } from '@inertiajs/react';
 import StoremateInfo from '@/Components/StoremateInfo';
 import StoremateFeatures from '@/Components/StoremateFeatures';
 import Pricing from '@/Components/Pricing';
+import HowItWorks from '@/Components/HowItWorks';
+import Faq from '@/Components/Faq';
+import Footer from '@/Components/Footer';
+import CallToAction from '@/Components/CallToAction';
 
 export default function Home({ auth }) {
     return (
@@ -14,13 +18,10 @@ export default function Home({ auth }) {
             <StoremateInfo />
             <StoremateFeatures />
             <Pricing />
-            <div className="py-12">
-                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">You're on the home page!</div>
-                    </div>
-                </div>
-            </div>
+            <HowItWorks />
+            <Faq />
+            <CallToAction />
+            <Footer />
         </>
     );
 }

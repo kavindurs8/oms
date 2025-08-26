@@ -97,8 +97,60 @@ export default function Pricing() {
     ];
 
     return (
-        <div className="relative py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+        <div className="relative py-16 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+            {/* Background Pattern and Gradients */}
+            <div className="absolute inset-0">
+                {/* Simple Grid Pattern */}
+                <div
+                    className="absolute inset-0 opacity-20"
+                    style={{
+                        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3e%3cg fill='none' stroke='%23006daf' stroke-width='0.5'%3e%3cpath d='M0 0h50v50H0z'/%3e%3c/g%3e%3c/svg%3e")`,
+                        backgroundSize: '50px 50px'
+                    }}
+                ></div>
+
+                {/* Top to Bottom Gradient (flipped) */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%)'
+                    }}
+                ></div>
+
+                {/* Edge to Middle Gradient (Radial) */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: 'radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.3) 80%, rgba(255, 255, 255, 0.6) 100%)'
+                    }}
+                ></div>
+
+                {/* Top to Text Area Middle Gradient (flipped) */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0) 60%)'
+                    }}
+                ></div>
+
+                {/* Bottom to White Gradient (underside fade) */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: 'linear-gradient(to top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0) 50%)'
+                    }}
+                ></div>
+
+                {/* Blue gradient fading to white on top and bottom edges */}
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        background: 'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(0, 109, 175, 0.1) 15%, rgba(0, 109, 175, 0.05) 50%, rgba(0, 109, 175, 0.1) 85%, rgba(255, 255, 255, 1) 100%)'
+                    }}
+                ></div>
+            </div>
+
+            <div className="relative max-w-7xl mx-auto">
                 {/* Header */}
                 <div className={`text-center mb-12 transition-all duration-1000 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
@@ -202,11 +254,14 @@ export default function Pricing() {
                             </div>
 
                             {/* CTA Button */}
-                            <button
-                                className={`w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 ${plan.buttonStyle}`}
+                            <a
+                                href="https://welcome.oms.storemate.cloud/register"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`block w-full py-3 px-4 rounded-lg font-medium text-sm transition-all duration-300 hover:scale-105 text-center ${plan.buttonStyle}`}
                             >
                                 {plan.buttonText}
-                            </button>
+                            </a>
                         </div>
                     ))}
                 </div>

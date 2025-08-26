@@ -75,7 +75,7 @@ export default function Header({ auth }) {
                             href={route('register')}
                             className="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3"
                         >
-                            Book a Demo
+                            Start a Free Trial
                         </Link>
                     </div>
 
