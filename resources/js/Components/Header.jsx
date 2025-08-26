@@ -12,7 +12,7 @@ export default function Header({ auth }) {
                 <div className="flex h-24 items-center justify-between">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
-                            <Link href="/">
+                            <Link href="/home">
                                 <img src="/oms-v1.png" alt="Logo" className="block h-16 w-auto" />
                             </Link>
                         </div>
@@ -71,12 +71,14 @@ export default function Header({ auth }) {
                         >
                             Contact Us
                         </Link>
-                        <Link
-                            href={route('register')}
+                        <a
+                            href="https://welcome.oms.storemate.cloud/register"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="ml-4 inline-flex items-center justify-center rounded-md border border-transparent bg-custom-blue-2 px-4 py-2 text-base font-bold text-white shadow-sm hover:bg-custom-blue-3"
                         >
                             Start a Free Trial
-                        </Link>
+                        </a>
                     </div>
 
                     <div className="-mr-2 flex items-center sm:hidden">
@@ -136,7 +138,14 @@ export default function Header({ auth }) {
 
                     <div className="mt-3 space-y-1">
                         <NavLink href={route('login')} block="true">Login</NavLink>
-                        <NavLink href={route('register')} block="true">Register</NavLink>
+                        <a
+                            href="https://welcome.oms.storemate.cloud/register"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+                        >
+                            Register
+                        </a>
                     </div>
                 </div>
             </div>
