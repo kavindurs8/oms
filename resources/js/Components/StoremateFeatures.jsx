@@ -115,50 +115,120 @@ export default function StoremateFeatures() {
                         </div>
                     </div>
 
-                    {/* Right Content - Interface Showcase */}
+                    {/* Right Content - Full Width Image */}
                     <div className={`relative transition-all duration-1200 delay-600 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
-                        <div className="relative h-96 overflow-visible">
-                            {/* Large Blue Circle Background */}
-                            <div className="absolute bottom-0 left-1/2 w-80 h-80 rounded-full transform -translate-x-1/2 translate-y-1/2" style={{
-                                background: 'linear-gradient(135deg, #4F46E5 0%, #3B82F6 50%, #2563EB 100%)'
-                            }}></div>
+                        <div className="relative overflow-visible">
+                            {/* Creative Background Elements */}
+                            <div className="absolute inset-0 z-0">
+                                {/* Large gradient circle */}
+                                <div className="absolute -bottom-20 -right-10 w-72 h-72 rounded-full opacity-20" style={{
+                                    background: 'linear-gradient(135deg, #013387 0%, #006daf 100%)'
+                                }}></div>
 
-                            {/* Left Modal - Add a New Flow */}
-                            <div className="absolute top-4 left-4 w-72 h-80 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-700 z-20 overflow-hidden">
-                                <img
-                                    src="/Delivery-Status.png"
-                                    alt="Left Modal - Add a New Flow"
-                                    className="w-full h-full object-cover rounded-2xl"
-                                    onError={(e) => {
-                                        // Replace with gradient fallback
-                                        const parent = e.target.parentNode;
-                                        if (parent) {
-                                            const div = document.createElement('div');
-                                            div.className = 'w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center';
-                                            div.innerHTML = '<div class="text-center text-white"><svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg><p class="text-lg font-semibold">Left Modal - Add a New Flow</p></div>';
-                                            parent.replaceChild(div, e.target);
-                                        }
-                                    }}
-                                />
+                                {/* Medium circle */}
+                                <div className="absolute -top-10 -left-16 w-48 h-48 rounded-full opacity-15" style={{
+                                    background: 'linear-gradient(45deg, #00BCE7 0%, #006daf 100%)'
+                                }}></div>
+
+                                {/* Small accent circle */}
+                                <div className="absolute top-1/2 -right-8 w-24 h-24 rounded-full opacity-25" style={{
+                                    background: 'linear-gradient(225deg, #013387 0%, #00BCE7 100%)'
+                                }}></div>
+
+                                {/* Floating dots */}
+                                <div className="absolute top-20 left-8 w-3 h-3 rounded-full animate-pulse" style={{backgroundColor: '#00BCE7', opacity: '0.6'}}></div>
+                                <div className="absolute bottom-32 right-20 w-2 h-2 rounded-full animate-pulse" style={{backgroundColor: '#013387', opacity: '0.4'}}></div>
+                                <div className="absolute top-40 right-12 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#006daf', opacity: '0.5'}}></div>
                             </div>
 
-                            {/* Right Modal - Advanced Settings */}
-                            <div className="absolute bottom-8 right-8 w-64 h-72 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-700 z-10 overflow-hidden">
-                                <img
-                                    src="/design-9-1-scaled.jpg"
-                                    alt="Right Modal - Advanced Settings"
-                                    className="w-full h-full object-cover rounded-2xl"
-                                    onError={(e) => {
-                                        // Replace with gradient fallback
-                                        const parent = e.target.parentNode;
-                                        if (parent) {
-                                            const div = document.createElement('div');
-                                            div.className = 'w-full h-full bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center';
-                                            div.innerHTML = '<div class="text-center text-white"><svg class="w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg><p class="text-sm font-semibold">Right Modal - Advanced Settings</p></div>';
-                                            parent.replaceChild(div, e.target);
-                                        }
-                                    }}
-                                />
+                            {/* Main Creative Container */}
+                            <div className="relative z-20 transform hover:scale-105 transition-all duration-700 hover:-translate-y-2">
+                                {/* Outer container with creative shape */}
+                                <div className="relative bg-gradient-to-br from-white via-gray-50 to-white rounded-3xl overflow-hidden border border-gray-100" style={{
+                                    background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%)'
+                                }}>
+                                    {/* Top decorative bar */}
+                                    <div className="h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700" style={{
+                                        background: 'linear-gradient(90deg, #013387 0%, #006daf 50%, #00BCE7 100%)'
+                                    }}></div>
+
+                                    {/* Image Section with Creative Frame */}
+                                    <div className="p-6">
+                                        <div className="relative overflow-hidden rounded-2xl" style={{
+                                            background: 'linear-gradient(45deg, #f1f5f9 0%, #e2e8f0 100%)',
+                                            padding: '3px'
+                                        }}>
+                                            <div className="relative h-80 rounded-2xl overflow-hidden bg-white">
+                                                <img
+                                                    src="/Delivery-Status.png"
+                                                    alt="Storemate OMS Dashboard Interface"
+                                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                                    onError={(e) => {
+                                                        // Replace with gradient fallback
+                                                        const parent = e.target.parentNode;
+                                                        if (parent) {
+                                                            const div = document.createElement('div');
+                                                            div.className = 'w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center';
+                                                            div.innerHTML = '<div class="text-center text-white p-8"><svg class="w-20 h-20 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg><p class="text-xl font-semibold">Storemate OMS</p><p class="text-sm opacity-90">Order Management System</p></div>';
+                                                            parent.replaceChild(div, e.target);
+                                                        }
+                                                    }}
+                                                />
+
+                                                {/* Image overlay effects */}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Creative Stats Section */}
+                                    <div className="px-6 pb-6">
+                                        <div className="relative">
+                                            {/* Stats background with creative shape */}
+                                            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-indigo-50 to-blue-50 rounded-2xl transform -skew-y-1"></div>
+
+                                            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50">
+                                                <div className="grid grid-cols-3 gap-6">
+                                                    <div className="text-center transform hover:scale-110 transition-transform duration-300">
+                                                        <div className="relative">
+                                                            <div className="text-3xl font-black mb-2 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+                                                                500+
+                                                            </div>
+                                                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
+                                                        </div>
+                                                        <div className="text-sm text-gray-600 font-semibold">
+                                                            SMEs Served
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="text-center transform hover:scale-110 transition-transform duration-300">
+                                                        <div className="relative">
+                                                            <div className="text-3xl font-black mb-2 bg-gradient-to-r from-indigo-600 to-blue-700 bg-clip-text text-transparent">
+                                                                50+
+                                                            </div>
+                                                            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
+                                                        </div>
+                                                        <div className="text-sm text-gray-600 font-semibold">
+                                                            Active Partners
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="text-center transform hover:scale-110 transition-transform duration-300">
+                                                        <div className="relative">
+                                                            <div className="text-3xl font-black mb-2 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+                                                                95%
+                                                            </div>
+                                                            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-200 to-blue-300 rounded-full opacity-20 blur-sm"></div>
+                                                        </div>
+                                                        <div className="text-sm text-gray-600 font-semibold">
+                                                            Success Rate
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
