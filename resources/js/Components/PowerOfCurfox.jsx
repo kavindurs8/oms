@@ -48,10 +48,12 @@ export default function PowerOfCurfox() {
                             letterSpacing: '-0.03em',
                             fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
                         }}>
-                            Discover The <span style={{ color: '#006daf' }}>Power Of Curfox</span> In Seconds
+                            RUNNING AN   <span style={{ color: '#006daf' }}>ONLINE</span> BUSINESS?
                         </h2>
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            See the impact of our innovative solutions on seamless deliveries
+                            Storemate oms is built for sri lankan smes to manage their orders efficiently
+
+                            and ensure timely deliveries with curfox's reliable courier services.
                         </p>
                     </div>
 
