@@ -51,7 +51,7 @@ export default function PowerOfCurfox() {
                             Running an   <span style={{ color: '#006daf' }}>Online Business </span> In Sri Lanka?
                         </h2>
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            Storemate oms is built for sri lankan smes to manage their orders efficiently
+                            Storemate oms is built for sri lankan SMEs to manage their orders efficiently
 
                             and ensure timely deliveries with curfox's reliable courier services.
                         </p>
