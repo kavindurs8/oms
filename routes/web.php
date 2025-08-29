@@ -34,6 +34,22 @@ Route::get('/contact-us', function () {
     return Inertia::render('ContactUs');
 })->name('contact.us');
 
+Route::get('/inquiry', function () {
+    return Inertia::render('Inquiry');
+})->name('inquiry');
+
+Route::get('/sales-management', function () {
+    return Inertia::render('SalesManagement');
+})->name('sales.management');
+
+Route::get('/shipping-packing', function () {
+    return Inertia::render('ShippingPacking');
+})->name('shipping.packing');
+
+Route::get('/user-contact-product', function () {
+    return Inertia::render('UserContactProduct');
+})->name('user.contact.product');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

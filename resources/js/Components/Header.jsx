@@ -7,7 +7,7 @@ export default function Header({ auth }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     return (
-        <nav className="bg-white shadow-sm">
+        <nav className="shadow-sm relative z-[9999]">
             <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
                 <div className="flex h-24 items-center justify-between">
                     <div className="flex items-center">
@@ -37,11 +37,10 @@ export default function Header({ auth }) {
                                         </span>
                                     </Dropdown.Trigger>
                                     <Dropdown.Content>
-                                        <Dropdown.Link href="#">Inquiry</Dropdown.Link>
-                                        <Dropdown.Link href="#">Sales Management</Dropdown.Link>
-                                        <Dropdown.Link href="#">Shipping & Packing</Dropdown.Link>
-                                        <Dropdown.Link href="#">User</Dropdown.Link>
-                                        <Dropdown.Link href="#">Contact & Product</Dropdown.Link>
+                                        <Dropdown.Link href="/inquiry">Inquiry</Dropdown.Link>
+                                        <Dropdown.Link href={route('sales.management')}>Sales Management</Dropdown.Link>
+                                        <Dropdown.Link href={route('shipping.packing')}>Shipping & Packing</Dropdown.Link>
+                                        <Dropdown.Link href={route('user.contact.product')}>User, Contact, Product</Dropdown.Link>
                                         <Dropdown.Link href={route('new.dashboard')}>New Dashboard</Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
