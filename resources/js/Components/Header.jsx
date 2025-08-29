@@ -41,7 +41,6 @@ export default function Header({ auth }) {
                                         <Dropdown.Link href={route('sales.management')}>Sales Management</Dropdown.Link>
                                         <Dropdown.Link href={route('shipping.packing')}>Shipping & Packing</Dropdown.Link>
                                         <Dropdown.Link href={route('user.contact.product')}>User, Contact, Product</Dropdown.Link>
-                                        <Dropdown.Link href={route('new.dashboard')}>New Dashboard</Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
                                 <NavLink href={route('partner.program')} active={route().current('partner.program')} className="text-base font-medium text-gray-500 hover:text-gray-900">
