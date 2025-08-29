@@ -9,8 +9,10 @@ export default function SalesHero({ auth }) {
   }, []);
 
   return (
-    <div className="bg-white">
-      <div className="relative isolate px-6 pt-14 lg:px-8">
+    <div className="bg-white relative">
+      {/* Background overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-orange-50/20 to-blue-50/30 z-0"></div>
+      <div className="relative isolate px-6 pt-14 lg:px-8 z-10">
         {/* Background Pattern */}
         <div
           aria-hidden="true"

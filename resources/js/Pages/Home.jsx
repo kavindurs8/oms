@@ -8,6 +8,7 @@ import HowItWorks from '@/Components/HowItWorks';
 import Faq from '@/Components/Faq';
 import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
+import PowerOfCurfox from '@/Components/PowerOfCurfox';
 
 export default function Home({ auth }) {
     return (
@@ -18,6 +19,7 @@ export default function Home({ auth }) {
             <StoremateInfo />
             <StoremateFeatures />
             <Pricing />
+            <PowerOfCurfox />
             <HowItWorks />
             <Faq />
             <CallToAction />

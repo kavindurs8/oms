@@ -15,60 +15,82 @@ export default function HowItWorks() {
 
     const steps = [
         {
-            step: "Step 1",
-            title: "Receive & Track Inquiries",
+            number: "1",
+            title: "RECEIVE",
+            subtitle: "Receive & Track Inquiries",
             description: "All orders from Facebook, WhatsApp, calls, and Instagram are captured in one clean dashboard.",
-            icon: "📥",
-            color: "#8B5CF6",
-            bgColor: "from-purple-100 to-purple-50",
-            position: "top-left"
+            icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>,
+            bgColor: "linear-gradient(135deg, #D81B60 0%, #E91E63 100%)",
+            color: "#D81B60",
+            details: [
+                "Facebook integration",
+                "WhatsApp management",
+                "Call tracking",
+                "Instagram orders"
+            ]
         },
         {
-            step: "Step 2",
-            title: "Confirm & Convert to Order",
+            number: "2",
+            title: "CONFIRM",
+            subtitle: "Confirm & Convert to Order",
             description: "Detect duplicates, follow up fast, and confirm real customers before shipping.",
-            icon: "✅",
-            color: "#10B981",
-            bgColor: "from-green-100 to-green-50",
-            position: "top-right"
+            icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>,
+            bgColor: "linear-gradient(135deg, #FF6F00 0%, #FF9800 100%)",
+            color: "#FF6F00",
+            details: [
+                "Duplicate detection",
+                "Fast follow-ups",
+                "Customer verification",
+                "Order confirmation"
+            ]
         },
         {
-            step: "Step 3",
-            title: "Sync with Courier & Print Waybill",
+            number: "3",
+            title: "SYNC",
+            subtitle: "Sync with Courier & Print Waybill",
             description: "Send orders to Royal Express or Trans Express in one click. No Excel — just print & pack.",
-            icon: "🚚",
-            color: "#3B82F6",
-            bgColor: "from-blue-100 to-blue-50",
-            position: "bottom-left"
+            icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>,
+            bgColor: "linear-gradient(135deg, #FF9800 0%, #FFC107 100%)",
+            color: "#FF9800",
+            details: [
+                "Royal Express sync",
+                "Trans Express sync",
+                "One-click shipping",
+                "Waybill printing"
+            ]
         },
         {
-            step: "Step 4",
-            title: "Monitor Everything Live",
+            number: "4",
+            title: "MONITOR",
+            subtitle: "Monitor Everything Live",
             description: "Track delivery status, order progress, and customer history — all in one place.",
-            icon: "📊",
-            color: "#F59E0B",
-            bgColor: "from-yellow-100 to-yellow-50",
-            position: "bottom-right"
+            icon: <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>,
+            bgColor: "linear-gradient(135deg, #00ACC1 0%, #26C6DA 100%)",
+            color: "#00ACC1",
+            details: [
+                "Delivery tracking",
+                "Order progress",
+                "Customer history",
+                "Live monitoring"
+            ]
         }
     ];
 
     return (
-        <div className="relative py-20 px-4 sm:px-6 lg:px-8 ">
-            <div className="max-w-6xl mx-auto">
+        <div className="relative py-20 px-4 sm:px-6 lg:px-8 mb-20">
+            <div className="relative max-w-7xl mx-auto">
                 {/* Header */}
-                <div className={`text-center mb-20 transition-all duration-1000 ${
+                <div className={`text-center mb-16 transition-all duration-1000 ${
                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}>
-                    {/* Subtitle with same style as other sections */}
                     <div className="mb-4">
                         <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{
                             color: '#006daf',
                             backgroundColor: '#ffe6daff'
                         }}>
-                            STOREMATE™ OMS
+                            STOREMATE™ PROCESS
                         </span>
                     </div>
-
                     <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4" style={{
                         fontWeight: '750',
                         fontStretch: 'ultra-condensed',
@@ -77,133 +99,237 @@ export default function HowItWorks() {
                     }}>
                         How it Works?
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed mb-36">
                         Follow our simple 4-step process to transform your order management from chaos to complete control
                     </p>
                 </div>
 
-                {/* Flow Diagram */}
-                <div className="relative">
-                    {/* Background Pattern */}
-                    <div className="absolute inset-0 opacity-10">
-                        <svg className="w-full h-full" viewBox="0 0 800 600">
+                {/* Wave Flow Design */}
+                <div className="relative max-w-6xl mx-auto">
+                    {/* Desktop Layout */}
+                    <div className="hidden lg:block relative h-[600px]">
+                        {/* Background gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-orange-50/30 rounded-3xl"></div>
+
+                        {/* Center Wave Line */}
+                        <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 1000 600">
+                            {/* Main Wave Path with enhanced styling */}
                             <defs>
-                                <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                                    <circle cx="20" cy="20" r="2" fill="#D1D5DB"/>
-                                </pattern>
+                                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="#006daf" />
+                                    <stop offset="50%" stopColor="#0077cc" />
+                                    <stop offset="100%" stopColor="#006daf" />
+                                </linearGradient>
                             </defs>
-                            <rect width="100%" height="100%" fill="url(#dots)"/>
-                        </svg>
-                    </div>
-
-                    {/* Connection Lines - SVG Paths */}
-                    <div className="absolute inset-0 hidden lg:block">
-                        <svg className="w-full h-full" viewBox="0 0 800 400">
-                            {/* Curved connection from Step 1 to Step 2 */}
                             <path
-                                d="M200 120 Q400 80 600 120"
-                                stroke="#E5E7EB"
-                                strokeWidth="3"
+                                d="M 50 300 Q 200 220 350 300 T 650 300 T 950 300"
+                                stroke="url(#waveGradient)"
+                                strokeWidth="5"
                                 fill="none"
-                                strokeDasharray="8,8"
-                                className={`transition-all duration-2000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-                            />
-                            {/* Arrow */}
-                            <polygon points="590,115 600,120 590,125" fill="#E5E7EB" className={`transition-all duration-2000 delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}/>
-
-                            {/* Curved connection from Step 2 to Step 3 */}
-                            <path
-                                d="M600 160 Q500 200 400 240 Q300 280 200 280"
-                                stroke="#E5E7EB"
-                                strokeWidth="3"
-                                fill="none"
-                                strokeDasharray="8,8"
-                                className={`transition-all duration-2000 delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-                            />
-                            {/* Arrow */}
-                            <polygon points="210,275 200,280 210,285" fill="#E5E7EB" className={`transition-all duration-2000 delay-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}/>
-
-                            {/* Curved connection from Step 3 to Step 4 */}
-                            <path
-                                d="M240 280 Q400 320 600 280"
-                                stroke="#E5E7EB"
-                                strokeWidth="3"
-                                fill="none"
-                                strokeDasharray="8,8"
-                                className={`transition-all duration-2000 delay-1200 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-                            />
-                            {/* Arrow */}
-                            <polygon points="590,275 600,280 590,285" fill="#E5E7EB" className={`transition-all duration-2000 delay-1500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}/>
-                        </svg>
-                    </div>
-
-                    {/* Steps Container */}
-                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-                        {steps.map((stepItem, index) => (
-                            <div
-                                key={index}
-                                className={`relative transition-all duration-1000 ${
-                                    isLoaded ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
-                                } ${
-                                    stepItem.position === 'top-right' || stepItem.position === 'bottom-right'
-                                        ? 'lg:ml-auto'
-                                        : ''
-                                } ${
-                                    stepItem.position === 'bottom-left' || stepItem.position === 'bottom-right'
-                                        ? 'lg:mt-12'
-                                        : ''
-                                }`}
+                                strokeDasharray="15,8"
+                                className={`transition-all duration-3000 ease-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                                 style={{
-                                    animationDelay: `${index * 300}ms`,
-                                    maxWidth: '380px'
+                                    strokeDashoffset: isLoaded ? '0' : '100',
+                                    transition: 'stroke-dashoffset 3s ease-out'
                                 }}
-                            >
-                                {/* Step Card */}
-                                <div className={`bg-gradient-to-br ${stepItem.bgColor} rounded-3xl p-8 pt-12 transition-all duration-500 border border-white/50 backdrop-blur-sm relative overflow-hidden group`}>
-                                    {/* Floating Icon */}
-                                    <div className="absolute -top-3 left-8">
-                                        <div
-                                            className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl shadow-lg"
-                                            style={{ backgroundColor: stepItem.color }}
-                                        >
-                                            <span className="text-white text-xl font-bold">{index + 1}</span>
-                                        </div>
+                            />
+                        </svg>
+
+                        {/* Step Components */}
+                        {/* Step 1 - Top Left */}
+                        <div
+                            className={`absolute transition-all duration-1000 ${
+                                isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                            }`}
+                            style={{
+                                left: '10px',
+                                top: '-70px',
+                                transitionDelay: '500ms',
+                                zIndex: 20
+                            }}
+                        >
+                            <div className="flex flex-col items-center group">
+                                <div className="text-center max-w-64 bg-gradient-to-br from-white to-gray-50/80 backdrop-blur-sm rounded-2xl p-5 border-2 border-pink-300/80 mb-6 transform transition-all duration-300 group-hover:scale-105 group-hover:border-pink-400/90">
+                                    <h3 className="font-bold text-gray-900 mb-3 text-base">{steps[0].subtitle}</h3>
+                                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">{steps[0].description}</p>
+                                    <div className="space-y-2">
+                                        {steps[0].details.map((detail, idx) => (
+                                            <div key={idx} className="text-sm text-gray-700 flex items-center">
+                                                <span className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: steps[0].color }}></span>
+                                                {detail}
+                                            </div>
+                                        ))}
                                     </div>
-
-                                    {/* Content */}
-                                    <div className="pt-8">
-                                        {/* Step Number */}
-                                        <div className="mb-4">
-                                            <span
-                                                className="text-sm font-bold tracking-widest uppercase"
-                                                style={{ color: stepItem.color }}
-                                            >
-                                                {stepItem.step}
-                                            </span>
-                                        </div>
-
-                                        {/* Title */}
-                                        <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
-                                            {stepItem.title}
-                                        </h3>
-
-                                        {/* Description */}
-                                        <p className="text-gray-700 leading-relaxed">
-                                            {stepItem.description}
-                                        </p>
-                                    </div>
-
-                                    {/* Hover Glow Effect */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 rounded-3xl"
-                                        style={{ backgroundColor: stepItem.color }}
-                                    ></div>
                                 </div>
+                                <div
+                                    className="w-24 h-24 flex flex-col items-center justify-center text-white cursor-pointer transform transition-all duration-500 rounded-2xl shadow-2xl relative overflow-hidden group-hover:scale-110"
+                                    style={{ background: steps[0].bgColor }}
+                                >
+                                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="text-xl font-black mb-1 relative z-10">{steps[0].number}</div>
+                                    <div className="text-sm font-bold tracking-wider mb-1 relative z-10">{steps[0].title}</div>
+                                    <div className="relative z-10 text-white">{steps[0].icon}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Step 2 - On wave */}
+                        <div
+                            className={`absolute transition-all duration-1000 ${
+                                isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                            }`}
+                            style={{
+                                left: '310px',
+                                top: '280px',
+                                transitionDelay: '700ms',
+                                zIndex: 20
+                            }}
+                        >
+                            <div className="flex flex-col items-center group">
+                                <div
+                                    className="w-24 h-24 flex flex-col items-center justify-center text-white cursor-pointer transform transition-all duration-500 rounded-2xl shadow-2xl relative overflow-hidden group-hover:scale-110 mb-6"
+                                    style={{ background: steps[1].bgColor }}
+                                >
+                                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="text-xl font-black mb-1 relative z-10">{steps[1].number}</div>
+                                    <div className="text-sm font-bold tracking-wider mb-1 relative z-10">{steps[1].title}</div>
+                                    <div className="relative z-10 text-white">{steps[1].icon}</div>
+                                </div>
+                                <div className="text-center max-w-64 bg-gradient-to-br from-white to-gray-50/80 backdrop-blur-sm rounded-2xl p-5 border-2 border-orange-300/80 transform transition-all duration-300 group-hover:scale-105 group-hover:border-orange-400/90">
+                                    <h3 className="font-bold text-gray-900 mb-3 text-base">{steps[1].subtitle}</h3>
+                                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">{steps[1].description}</p>
+                                    <div className="space-y-2">
+                                        {steps[1].details.map((detail, idx) => (
+                                            <div key={idx} className="text-sm text-gray-700 flex items-center">
+                                                <span className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: steps[1].color }}></span>
+                                                {detail}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Step 3 - Top */}
+                        <div
+                            className={`absolute transition-all duration-1000 ${
+                                isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                            }`}
+                            style={{
+                                left: '610px',
+                                top: '-70px',
+                                transitionDelay: '900ms',
+                                zIndex: 20
+                            }}
+                        >
+                            <div className="flex flex-col items-center group">
+                                <div className="text-center max-w-64 bg-gradient-to-br from-white to-gray-50/80 backdrop-blur-sm rounded-2xl p-5 border-2 border-yellow-300/80 mb-6 transform transition-all duration-300 group-hover:scale-105 group-hover:border-yellow-400/90">
+                                    <h3 className="font-bold text-gray-900 mb-3 text-base">{steps[2].subtitle}</h3>
+                                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">{steps[2].description}</p>
+                                    <div className="space-y-2">
+                                        {steps[2].details.map((detail, idx) => (
+                                            <div key={idx} className="text-sm text-gray-700 flex items-center">
+                                                <span className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: steps[2].color }}></span>
+                                                {detail}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div
+                                    className="w-24 h-24 flex flex-col items-center justify-center text-white cursor-pointer transform transition-all duration-500 rounded-2xl shadow-2xl relative overflow-hidden group-hover:scale-110"
+                                    style={{ background: steps[2].bgColor }}
+                                >
+                                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="text-xl font-black mb-1 relative z-10">{steps[2].number}</div>
+                                    <div className="text-sm font-bold tracking-wider mb-1 relative z-10">{steps[2].title}</div>
+                                    <div className="relative z-10 text-white">{steps[2].icon}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Step 4 - On wave */}
+                        <div
+                            className={`absolute transition-all duration-1000 ${
+                                isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                            }`}
+                            style={{
+                                left: '900px',
+                                top: '280px',
+                                transitionDelay: '1100ms',
+                                zIndex: 20
+                            }}
+                        >
+                            <div className="flex flex-col items-center group">
+                                <div
+                                    className="w-24 h-24 flex flex-col items-center justify-center text-white cursor-pointer transform transition-all duration-500 rounded-2xl shadow-2xl relative overflow-hidden group-hover:scale-110 mb-6"
+                                    style={{ background: steps[3].bgColor }}
+                                >
+                                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="text-xl font-black mb-1 relative z-10">{steps[3].number}</div>
+                                    <div className="text-sm font-bold tracking-wider mb-1 relative z-10">{steps[3].title}</div>
+                                    <div className="relative z-10 text-white">{steps[3].icon}</div>
+                                </div>
+                                <div className="text-center max-w-64 bg-gradient-to-br from-white to-gray-50/80 backdrop-blur-sm rounded-2xl p-5 border-2 border-cyan-300/80 transform transition-all duration-300 group-hover:scale-105 group-hover:border-cyan-400/90">
+                                    <h3 className="font-bold text-gray-900 mb-3 text-base">{steps[3].subtitle}</h3>
+                                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">{steps[3].description}</p>
+                                    <div className="space-y-2">
+                                        {steps[3].details.map((detail, idx) => (
+                                            <div key={idx} className="text-sm text-gray-700 flex items-center">
+                                                <span className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: steps[3].color }}></span>
+                                                {detail}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Mobile Layout */}
+                    <div className="lg:hidden space-y-12">
+                        {steps.map((step, index) => (
+                            <div
+                                key={step.number}
+                                className={`transition-all duration-1000 ${
+                                    isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                                }`}
+                                style={{ transitionDelay: `${index * 300}ms` }}
+                            >
+                                <div className="flex flex-col items-center text-center">
+                                    <div
+                                        className="w-24 h-24 flex flex-col items-center justify-center text-white mb-6 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
+                                        style={{ background: step.bgColor }}
+                                    >
+                                        <div className="text-lg font-black mb-1">{step.number}</div>
+                                        <div className="text-xs font-bold tracking-wider mb-1">{step.title}</div>
+                                        <div className="text-white">{step.icon}</div>
+                                    </div>
+
+                                    <h3 className="font-bold text-gray-900 mb-3 text-lg">{step.subtitle}</h3>
+                                    <p className="text-sm text-gray-600 mb-6 max-w-sm">{step.description}</p>
+
+                                    <div className="bg-white rounded-lg p-4 shadow-sm max-w-sm w-full border border-gray-100">
+                                        <div className="grid grid-cols-2 gap-3">
+                                            {step.details.map((detail, idx) => (
+                                                <div key={idx} className="text-sm text-gray-700">• {detail}</div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Mobile connector */}
+                                {index < steps.length - 1 && (
+                                    <div className="flex justify-center mt-8">
+                                        <div
+                                            className="w-2 h-12 rounded-full opacity-50"
+                                            style={{ backgroundColor: step.color }}
+                                        ></div>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
                 </div>
-
             </div>
         </div>
     );
