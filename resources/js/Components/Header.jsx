@@ -18,18 +18,12 @@ export default function Header({ auth }) {
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-6">
-                                <NavLink href={route('home')} active={route().current('home')} className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                <NavLink href={route('home')} active={route().current('home')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                     Home
-                                </NavLink>
-                                <NavLink href={route('pricing')} active={route().current('pricing')} className="text-base font-medium text-gray-500 hover:text-gray-900">
-                                    Pricing
-                                </NavLink>
-                                <NavLink href={route('about')} active={route().current('about')} className="text-base font-medium text-gray-500 hover:text-gray-900">
-                                    About Us
                                 </NavLink>
                                 <Dropdown>
                                     <Dropdown.Trigger>
-                                        <span className="inline-flex items-center px-3 py-2 text-base font-medium text-gray-500 hover:text-gray-900 focus:outline-none cursor-pointer">
+                                        <span className="inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium leading-5 transition duration-150 ease-in-out focus:outline-none border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 focus:border-gray-300 focus:text-gray-700 cursor-pointer">
                                             Features
                                             <svg className="ml-1 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -43,7 +37,16 @@ export default function Header({ auth }) {
                                         <Dropdown.Link href={route('user.contact.product')}>User, Contact, Product</Dropdown.Link>
                                     </Dropdown.Content>
                                 </Dropdown>
-                                <NavLink href={route('partner.program')} active={route().current('partner.program')} className="text-base font-medium text-gray-500 hover:text-gray-900">
+                                <NavLink href={route('pricing')} active={route().current('pricing')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                    Pricing
+                                </NavLink>
+                                <NavLink href={route('about')} active={route().current('about')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                    About Us
+                                </NavLink>
+                                <NavLink href={route('free.course')} active={route().current('free.course')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                    Free Course
+                                </NavLink>
+                                <NavLink href={route('partner.program')} active={route().current('partner.program')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                     Partner Program
                                 </NavLink>
                             </div>
@@ -58,9 +61,30 @@ export default function Header({ auth }) {
                                 </span>
                             </Dropdown.Trigger>
                             <Dropdown.Content>
-                                <Dropdown.Link href={route('login')}>Login to POS (Lite)</Dropdown.Link>
-                                <Dropdown.Link href={route('login')}>Login to POS (Pro)</Dropdown.Link>
-                                <Dropdown.Link href={route('login')}>Login to OMS</Dropdown.Link>
+                                <a
+                                    href="https://app.storemate.cloud/login"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                >
+                                    Login to POS (Lite)
+                                </a>
+                                <a
+                                    href="https://app.storematepro.lk/login"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                >
+                                    Login to POS (Pro)
+                                </a>
+                                <a
+                                    href="https://oms.storemate.cloud/login"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                >
+                                    Login to OMS
+                                </a>
                             </Dropdown.Content>
                         </Dropdown>
                         <Link
@@ -115,6 +139,9 @@ export default function Header({ auth }) {
                     </NavLink>
                     <NavLink href={route('about')} active={route().current('about')} block="true">
                         About Us
+                    </NavLink>
+                    <NavLink href={route('free.course')} active={route().current('free.course')} block="true">
+                        Free Course
                     </NavLink>
                     <NavLink href="#" block="true">
                         Features

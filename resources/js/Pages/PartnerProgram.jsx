@@ -6,10 +6,11 @@ import PartnerProgram from '@/Components/Partner Program/PartnerProgram';
 import WhoWereLookingFor from '@/Components/Partner Program/WhoWereLookingFor';
 import HowStoremateEmpowers from '@/Components/Partner Program/HowStoremateEmpowers';
 import ExclusiveBenefits from '@/Components/Partner Program/ExclusiveBenefits';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function PartnerProgramPage({ auth }) {
     return (
-        <>
+        <MainLayout>
             <Head title="Partner Program - Storemate OMS" />
             <Header auth={auth} />
 
@@ -20,6 +21,6 @@ export default function PartnerProgramPage({ auth }) {
 
             <CallToAction />
             <Footer />
-        </>
+        </MainLayout>
     );
 }

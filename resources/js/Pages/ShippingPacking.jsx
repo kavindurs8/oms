@@ -10,10 +10,11 @@ import PrintWaybills from '@/Components/Shipping & Packing/PrintWaybills';
 import TrackPackageStatus from '@/Components/Shipping & Packing/TrackPackageStatus';
 import MonitorDeliveryStatus from '@/Components/Shipping & Packing/MonitorDeliveryStatus';
 import ShippingFeatures from '@/Components/Shipping & Packing/ShippingFeatures';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function ShippingPacking({ auth }) {
     return (
-        <>
+        <MainLayout>
             <Head title="Shipping & Packing - Storemate OMS" />
             <Header auth={auth} />
             <ShippingHero auth={auth} />
@@ -26,6 +27,6 @@ export default function ShippingPacking({ auth }) {
             <Faq />
             <CallToAction />
             <Footer />
-        </>
+        </MainLayout>
     );
 }

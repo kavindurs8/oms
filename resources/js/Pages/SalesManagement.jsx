@@ -9,10 +9,11 @@ import CallToAction from '@/Components/CallToAction';
 import CourierSyncStatus from '@/Components/Sales Management/Courier&SyncStatus';
 import PackingProgress from '@/Components/Sales Management/PackingProgress';
 import DeliveryUpdates from '@/Components/Sales Management/DeliveryUpdates';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function SalesManagement({ auth }) {
     return (
-        <>
+        <MainLayout>
             <Head title="Sales Management - Storemate OMS" />
             <Header auth={auth} />
             <SalesHero auth={auth} />
@@ -24,6 +25,6 @@ export default function SalesManagement({ auth }) {
             <Faq />
             <CallToAction />
             <Footer />
-        </>
+        </MainLayout>
     );
 }

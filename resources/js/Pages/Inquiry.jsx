@@ -8,10 +8,11 @@ import ReduceReturns from '@/Components/Inquiry/ReduceReturns';
 import DuplicateDetection from '@/Components/Inquiry/DuplicateDetection';
 import Faq from '@/Components/Faq';
 import CallToAction from '@/Components/CallToAction';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function Inquiry({ auth }) {
     return (
-        <>
+        <MainLayout>
             <Head title="Inquiry Management - Storemate OMS" />
             <Header auth={auth} />
 
@@ -23,6 +24,6 @@ export default function Inquiry({ auth }) {
             <Faq />
             <CallToAction />
             <Footer />
-        </>
+        </MainLayout>
     );
 }

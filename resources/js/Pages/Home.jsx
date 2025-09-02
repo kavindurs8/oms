@@ -9,21 +9,21 @@ import Faq from '@/Components/Faq';
 import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
 import PowerOfCurfox from '@/Components/PowerOfCurfox';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function Home({ auth }) {
     return (
-        <>
+        <MainLayout>
             <Head title="Home" />
             <Header auth={auth} />
             <Hero />
             <StoremateInfo />
             <StoremateFeatures />
             <Pricing />
-            <PowerOfCurfox />
             <HowItWorks />
             <Faq />
             <CallToAction />
             <Footer />
-        </>
+        </MainLayout>
     );
 }

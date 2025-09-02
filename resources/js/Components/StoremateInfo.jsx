@@ -35,11 +35,11 @@ export default function StoremateInfo() {
                             We're Sri Lanka's leading Order Management System. Our vision is to empower local E-commerce businesses by automating order processes, reducing returns, and increasing profits.
                         </p>
 
-                        <button className="text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg transform hover:-translate-y-1" style={{
+                        <Link href="/about" className="inline-block text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg transform hover:-translate-y-1" style={{
                             backgroundColor: '#013387'
                         }} onMouseEnter={(e) => e.target.style.backgroundColor = '#006daf'} onMouseLeave={(e) => e.target.style.backgroundColor = '#013387'}>
                             What we do
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Right Content - Partner Program Card */}
@@ -53,9 +53,9 @@ export default function StoremateInfo() {
                                     <p className="text-sm mb-6 leading-relaxed group-hover/card:text-opacity-95 transition-all duration-400" style={{color: '#E6F7FF'}}>
                                         Find out how we're helping businesses grow with smarter operations and profit protection.
                                     </p>
-                                    <button className="border-2 border-white text-white px-4 py-2 rounded-lg font-medium transition-all duration-400 hover:bg-white hover:scale-125 hover:-translate-y-2 hover:shadow-lg" onMouseEnter={(e) => {e.target.style.backgroundColor = 'white'; e.target.style.color = '#006daf'}} onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'white'}}>
+                                    <Link href="/partner-program" className="inline-block border-2 border-white text-white px-4 py-2 rounded-lg font-medium transition-all duration-400 hover:bg-white hover:scale-125 hover:-translate-y-2 hover:shadow-lg" onMouseEnter={(e) => {e.target.style.backgroundColor = 'white'; e.target.style.color = '#006daf'}} onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'white'}}>
                                         Take a look
-                                    </button>
+                                    </Link>
                                 </div>
 
                                 {/* Profile Images Circle */}

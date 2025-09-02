@@ -158,26 +158,81 @@ export default function StoremateFeatures() {
                                             background: 'linear-gradient(45deg, #f1f5f9 0%, #e2e8f0 100%)',
                                             padding: '3px'
                                         }}>
-                                            <div className="relative h-80 rounded-2xl overflow-hidden bg-white">
+                                            <div className="relative h-80 rounded-2xl overflow-hidden bg-white group cursor-pointer">
+                                                {/* Video Thumbnail */}
                                                 <img
-                                                    src="/Delivery-Status.png"
-                                                    alt="Storemate OMS Dashboard Interface"
-                                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                                    src="https://storemate.lk/wp-content/uploads/2025/06/Thumbnail-OMS-1.jpg"
+                                                    alt="Storemate OMS - How it Works Video"
+                                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                                     onError={(e) => {
-                                                        // Replace with gradient fallback
-                                                        const parent = e.target.parentNode;
-                                                        if (parent) {
-                                                            const div = document.createElement('div');
-                                                            div.className = 'w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center';
-                                                            div.innerHTML = '<div class="text-center text-white p-8"><svg class="w-20 h-20 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg><p class="text-xl font-semibold">Storemate OMS</p><p class="text-sm opacity-90">Order Management System</p></div>';
-                                                            parent.replaceChild(div, e.target);
-                                                        }
+                                                        // Fallback to YouTube thumbnail if custom thumbnail fails
+                                                        e.target.src = "https://img.youtube.com/vi/-CYtv4drzyo/maxresdefault.jpg";
+                                                        e.target.onerror = function() {
+                                                            // Final fallback to gradient
+                                                            const parent = e.target.parentNode;
+                                                            if (parent) {
+                                                                const div = document.createElement('div');
+                                                                div.className = 'w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center';
+                                                                div.innerHTML = '<div class="text-center text-white p-8"><svg class="w-20 h-20 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M19 10a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><p class="text-xl font-semibold">Storemate OMS</p><p class="text-sm opacity-90">Video Preview</p></div>';
+                                                                parent.replaceChild(div, e.target);
+                                                            }
+                                                        };
                                                     }}
                                                 />
 
+                                                {/* Video Play Overlay */}
+                                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                                                    <a
+                                                        href="https://youtu.be/-CYtv4drzyo"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="transform group-hover:scale-110 transition-all duration-300"
+                                                    >
+                                                        <div className="w-20 h-20 bg-white/95 rounded-full flex items-center justify-center text-red-600 shadow-2xl hover:bg-white hover:scale-110 transition-all duration-300">
+                                                            <svg className="w-8 h-8 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                {/* Video Duration Badge */}
+                                                <div className="absolute top-4 right-4 bg-black/80 text-white px-3 py-1 rounded-lg text-sm font-medium">
+                                                    4:51
+                                                </div>
+
+                                                {/* Video Title Overlay */}
+                                                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+                                                    <h3 className="text-white font-bold text-lg mb-1">
+                                                        How Storemate Works
+                                                    </h3>
+                                                    <p className="text-white/90 text-sm">
+                                                        Complete guide for Sri Lankan SMEs 🇱🇰
+                                                    </p>
+                                                </div>
+
                                                 {/* Image overlay effects */}
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
+                                                <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-black/5 pointer-events-none"></div>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Additional Text Section */}
+                                    <div className="px-6 pb-4">
+                                        <div className="text-center">
+                                            <h2 className="text-2xl md:text-3xl font-black mb-4" style={{
+                                                fontWeight: '750',
+                                                fontStretch: 'ultra-condensed',
+                                                letterSpacing: '-0.02em',
+                                                fontFamily: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                                                color: '#2D3748',
+                                                lineHeight: '1.2'
+                                            }}>
+                                                Running an Online Business In Sri Lanka?
+                                            </h2>
+                                            <p className="text-lg text-gray-600 mb-6">
+                                                See how Storemate OMS can transform your business operations
+                                            </p>
                                         </div>
                                     </div>
 

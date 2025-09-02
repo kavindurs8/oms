@@ -45,6 +45,10 @@ Route::get('/user-contact-product', function () {
     return Inertia::render('UserContactProduct');
 })->name('user.contact.product');
 
+Route::get('/free-course', function () {
+    return Inertia::render('FreeCourse');
+})->name('free.course');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

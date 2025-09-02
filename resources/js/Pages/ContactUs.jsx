@@ -2,10 +2,11 @@ import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
 import { Head } from '@inertiajs/react';
 import CallToAction from '@/Components/CallToAction';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function ContactUs({ auth }) {
     return (
-        <>
+        <MainLayout>
             <Head title="Contact Us - Storemate OMS" />
             <Header auth={auth} />
 
@@ -186,6 +187,6 @@ export default function ContactUs({ auth }) {
             <CallToAction />
 
             <Footer />
-        </>
+        </MainLayout>
     );
 }

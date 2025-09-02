@@ -9,10 +9,11 @@ import UserManagement from '@/Components/User, Contact, Product/UserManagement';
 import ContactManagement from '@/Components/User, Contact, Product/ContactManagement';
 import ProductManagement from '@/Components/User, Contact, Product/ProductManagement';
 import EasyOrganization from '@/Components/User, Contact, Product/EasyOrganization';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function UserContactProduct({ auth }) {
     return (
-        <>
+        <MainLayout>
             <Head title="User, Contact, Product - Storemate OMS" />
             <Header auth={auth} />
             <UserContactProductHero auth={auth} />
@@ -24,6 +25,6 @@ export default function UserContactProduct({ auth }) {
             <Faq />
             <CallToAction />
             <Footer />
-        </>
+        </MainLayout>
     );
 }

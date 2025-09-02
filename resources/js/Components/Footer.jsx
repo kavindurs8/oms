@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@inertiajs/react';
 
 const Footer = () => {
     return (
@@ -14,17 +15,15 @@ const Footer = () => {
 
                         <ul className="flex items-center space-x-3 mt-9">
                             <li>
-                                <a href="#" title="Twitter" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                <a href="https://www.youtube.com/@Storemate" target="_blank" rel="noopener noreferrer" title="YouTube" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-red-600 focus:bg-red-600">
                                     <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
-                                        ></path>
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                                     </svg>
                                 </a>
                             </li>
 
                             <li>
-                                <a href="#" title="Facebook" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                <a href="https://www.facebook.com/share/19XzgwGiNd/" target="_blank" rel="noopener noreferrer" title="Facebook" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
                                     <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path>
                                     </svg>
@@ -32,7 +31,7 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <a href="#" title="Instagram" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                <a href="https://www.instagram.com/storemate_inventory/" target="_blank" rel="noopener noreferrer" title="Instagram" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-pink-600 focus:bg-pink-600">
                                     <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path>
                                         <circle cx="16.806" cy="7.207" r="1.078"></circle>
@@ -44,13 +43,9 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <a href="#" title="GitHub" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                <a href="https://lk.linkedin.com/showcase/storemate-oms-system/" target="_blank" rel="noopener noreferrer" title="LinkedIn" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-700 focus:bg-blue-700">
                                     <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            fillRule="evenodd"
-                                            clipRule="evenodd"
-                                            d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
-                                        ></path>
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                                     </svg>
                                 </a>
                             </li>
@@ -62,19 +57,23 @@ const Footer = () => {
 
                         <ul className="mt-6 space-y-4">
                             <li>
-                                <a href="#" title="About" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">About</a>
+                                <Link href="/about" title="About" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">About</Link>
                             </li>
 
                             <li>
-                                <a href="#" title="Features" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Features</a>
+                                <Link href="/contact-us" title="Contact Us" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Contact Us</Link>
                             </li>
 
                             <li>
-                                <a href="#" title="How it Works" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">How it Works</a>
+                                <a href="https://youtu.be/-CYtv4drzyo?si=8L98z7pEprcHspDY" target="_blank" rel="noopener noreferrer" title="How it Works" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">How it Works</a>
                             </li>
 
                             <li>
-                                <a href="#" title="Pricing" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Pricing</a>
+                                <Link href="/pricing" title="Pricing" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Pricing</Link>
+                            </li>
+
+                            <li>
+                                <Link href="/free-course" title="Free Course" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Free Course</Link>
                             </li>
                         </ul>
                     </div>
@@ -84,19 +83,19 @@ const Footer = () => {
 
                         <ul className="mt-6 space-y-4">
                             <li>
-                                <a href="#" title="Customer Support" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Customer Support</a>
+                                <Link href="/inquiry" title="Inquiry" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Inquiry</Link>
                             </li>
 
                             <li>
-                                <a href="#" title="Delivery Details" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Delivery Details</a>
+                                <Link href="/sales-management" title="Sales Management" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Sales Management</Link>
                             </li>
 
                             <li>
-                                <a href="#" title="Terms & Conditions" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Terms & Conditions</a>
+                                <Link href="/shipping-packing" title="Shipping & Packing" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Shipping & Packing</Link>
                             </li>
 
                             <li>
-                                <a href="#" title="Privacy Policy" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Privacy Policy</a>
+                                <Link href="/user-contact-product" title="User, Contact, Product" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">User, Contact, Product</Link>
                             </li>
                         </ul>
                     </div>

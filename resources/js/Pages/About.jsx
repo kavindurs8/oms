@@ -3,6 +3,7 @@ import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
 import { useState, useEffect, useRef } from 'react';
+import MainLayout from '@/Layouts/MainLayout';
 
 export default function About({ auth }) {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -37,7 +38,7 @@ export default function About({ auth }) {
     }, []);
 
     return (
-        <>
+        <MainLayout>
             <Head title="About Us - Storemate OMS" />
             <Header auth={auth} />
 
@@ -347,6 +348,6 @@ export default function About({ auth }) {
 
             <CallToAction />
             <Footer />
-        </>
+        </MainLayout>
     );
 }
