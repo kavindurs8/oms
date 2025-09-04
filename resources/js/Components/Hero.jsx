@@ -141,17 +141,6 @@ export default function Hero() {
 
                     {/* Left Column - Content */}
                     <div className={`space-y-8 transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'} ${isVisible ? 'scale-100' : 'scale-95'}`}>
-                        {/* Brand Header */}
-                        <div className={`flex items-center space-x-3 mb-6 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
-                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-900 delay-600 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-12'}`} style={{backgroundColor: '#013387'}}>
-                                <span className="text-white font-bold text-sm">S</span>
-                            </div>
-                            <div>
-                                <div className="font-bold text-lg" style={{color: '#013387'}}>STOREMATE</div>
-                                <div className="text-gray-600 text-sm font-medium">Order Management System</div>
-                            </div>
-                        </div>
-
                         {/* Status Label */}
                         <div className={`transition-all duration-700 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`}>
                             <span className="inline-block text-sm font-bold tracking-widest animate-pulse" style={{color: '#006daf'}}>
@@ -162,8 +151,8 @@ export default function Hero() {
                         {/* Main Title */}
                         <div className={`transition-all duration-1100 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}>
                             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                                One platform.<br />
-                                <span style={{color: '#006daf'}}>Total order control.</span>
+                                Your Online Business.<br />
+                                <span style={{color: '#006daf'}}>Managed in One Place.</span>
                             </h1>
                             <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
                                 Streamline your inquiries, orders, and deliveries in one place. Say goodbye to manual uploads, duplicate orders, and missed follow-ups.
@@ -172,7 +161,7 @@ export default function Hero() {
 
                         {/* Stats Grid */}
                         <div className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                            <div className={`bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 delay-1000 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 -translate-x-4'}`}>
+                            <div className={`rounded-lg p-6 transition-all duration-300 delay-1000 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 -translate-x-4'}`}>
                                 <div className="flex items-center space-x-3">
                                     <div className={`w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center transition-all duration-800 delay-1100 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 -rotate-90'}`}>
                                         <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -186,7 +175,7 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <div className={`bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 delay-1200 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 translate-x-4'}`}>
+                            <div className={`rounded-lg p-6 transition-all duration-300 delay-1200 ${isVisible ? 'scale-100 translate-x-0' : 'scale-90 translate-x-4'}`}>
                                 <div className="flex items-center space-x-3">
                                     <div className={`w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center transition-all duration-800 delay-1300 ${isVisible ? 'scale-100 rotate-0' : 'scale-75 rotate-90'}`}>
                                         <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -220,15 +209,26 @@ export default function Hero() {
                                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
                             </a>
-                            <Link href="/contact-us" className="font-semibold transition-colors duration-300 flex items-center space-x-2 group"
+                            <button
+                                onClick={() => {
+                                    const section = document.getElementById('what-is-storemate-oms');
+                                    if (section) {
+                                        // If the section exists on current page, scroll to it
+                                        section.scrollIntoView({ behavior: 'smooth' });
+                                    } else {
+                                        // If not on home page, navigate to home page with hash
+                                        window.location.href = '/home#what-is-storemate-oms';
+                                    }
+                                }}
+                                className="font-semibold transition-colors duration-300 flex items-center space-x-2 group"
                                 style={{color: '#006daf'}}
                                 onMouseEnter={(e) => e.target.style.color = '#013387'}
                                 onMouseLeave={(e) => e.target.style.color = '#006daf'}>
-                                <span>Contact us</span>
+                                <span>How It Works</span>
                                 <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
-                            </Link>
+                            </button>
                         </div>
                     </div>
 
@@ -236,54 +236,13 @@ export default function Hero() {
                     <div className={`relative transition-all duration-1000 delay-1000 ${isVisible ? 'translate-x-0 opacity-100 scale-100' : 'translate-x-8 opacity-0 scale-95'}`}>
                         {/* Dashboard Content */}
                         <div className="relative">
-                            {/* Small gradient background only at bottom center */}
-                            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-16 bg-gradient-to-t from-blue-500/30 to-transparent"></div>
-
-                            {/* Enhanced dashboard mockup with styling */}
-                            <div className="relative z-10 overflow-hidden rounded-lg hover:shadow-3xl hover:scale-[1.02] transition-all duration-500 group">
-                                {/* Dashboard header */}
-                                <div className="h-16 bg-gradient-to-r from-blue-50 to-white flex items-center px-6 border-b border-gray-200">
-                                    <div className="flex items-center">
-                                        <div className="h-8 w-8 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#006daf'}}>
-                                            <svg className="h-5 w-5 text-white group-hover:rotate-12 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <span className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Storemate OMS Dashboard</span>
-                                    </div>
-                                    <div className="ml-auto flex items-center space-x-3">
-                                        <span className="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full animate-pulse">Live</span>
-                                        <span className="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Real-time</span>
-                                    </div>
-                                </div>
-
-                                {/* Dashboard main content */}
-                                <div className="relative overflow-hidden rounded-lg ml-4 mb-4">
-                                    <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-30 transform -skew-x-12 transition-transform duration-1000 ${isVisible ? 'translate-x-full' : '-translate-x-full'}`}></div>
-                                    <img
-                                        src="/Dashboards-2048x1152.jpg"
-                                        alt="Storemate OMS Dashboard"
-                                        className="w-full h-auto relative z-10 transition-all duration-300 ease-out"
-                                        style={{
-                                            filter: 'drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1))',
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.target.style.transform = 'scale(1.05)';
-                                            e.target.style.transition = 'transform 300ms ease-out';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.target.style.transform = 'scale(1)';
-                                            e.target.style.transition = 'transform 800ms ease-out';
-                                        }}
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Success rate floating indicator */}
-                            <div className={`absolute -bottom-4 -right-4 rounded-full p-3 shadow-lg transition-all duration-800 delay-1500 ${isVisible ? 'scale-100 opacity-100 rotate-0' : 'scale-75 opacity-0 rotate-180'}`} style={{backgroundColor: '#013387'}}>
-                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                </svg>
+                            {/* Clean dashboard image without styling */}
+                            <div className="relative overflow-hidden rounded-lg">
+                                <img
+                                    src="/Dashboards-2048x1152.jpg"
+                                    alt="Storemate OMS Dashboard"
+                                    className="w-full h-auto"
+                                />
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
 import CallToAction from '@/Components/CallToAction';
@@ -106,8 +106,8 @@ export default function FreeCourse({ auth }) {
             ]
         },
         {
-            title: "System Features & Management",
-            description: "Master the core features including search, inquiries, products, customers and users",
+            title: "Courier Integration & COD Business",
+            description: "Learn how to start and manage a successful COD business with courier integrations",
             videos: [
                 {
                     title: "Global Search | Online Order Management Software",
@@ -154,8 +154,8 @@ export default function FreeCourse({ auth }) {
             ]
         },
         {
-            title: "Courier Integration & COD Business",
-            description: "Learn to work with courier companies and set up Cash on Delivery operations",
+            title: "How to start COD Business in Sri Lanka",
+            description: "Complete guide to starting and scaling your Cash on Delivery business",
             videos: [
                 {
                     title: "How to Work with Courier Company",
@@ -255,104 +255,153 @@ export default function FreeCourse({ auth }) {
             {/* Course Modules */}
             <div ref={componentRef} className="py-16 bg-gray-50">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div className="space-y-12">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900 mb-6">Course Modules</h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Click on any module to access detailed video lessons and materials
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {courseModules.map((module, moduleIndex) => (
                             <div key={moduleIndex} className={`transition-all duration-1000 delay-${moduleIndex * 200} ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                                {/* Module Header */}
-                                <div className="text-center mb-8">
-                                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-4">
-                                        Module {moduleIndex + 1}
-                                    </div>
-                                    <h2 className="text-3xl font-bold text-gray-900 mb-4">{module.title}</h2>
-                                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">{module.description}</p>
-                                </div>
+                                <Link
+                                    href={`/module-${moduleIndex + 1}`}
+                                    className="block bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden group cursor-pointer"
+                                >
+                                    {/* Module Header */}
+                                    <div className="p-8 text-center">
+                                        <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-bold mb-6 ${
+                                            moduleIndex === 0 ? 'bg-blue-100 text-blue-800' :
+                                            moduleIndex === 1 ? 'bg-green-100 text-green-800' :
+                                            'bg-purple-100 text-purple-800'
+                                        }`}>
+                                            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                {moduleIndex === 0 && (
+                                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/>
+                                                )}
+                                                {moduleIndex === 1 && (
+                                                    <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                                                )}
+                                                {moduleIndex === 2 && (
+                                                    <>
+                                                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                                                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1V8a1 1 0 00-1-1h-3z"/>
+                                                    </>
+                                                )}
+                                            </svg>
+                                            Module {moduleIndex + 1}
+                                        </div>
 
-                                {/* Videos Grid */}
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {module.videos.map((video, videoIndex) => {
-                                        const thumbnailUrl = getYouTubeThumbnail(video.url);
-                                        return (
-                                            <div key={videoIndex} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden group">
-                                                {/* Video Thumbnail */}
-                                                <div className="relative aspect-video overflow-hidden">
-                                                    {thumbnailUrl ? (
-                                                        <img
-                                                            src={`https://img.youtube.com/vi/${getYouTubeVideoId(video.url)}/maxresdefault.jpg`}
-                                                            alt={video.title}
-                                                            className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
-                                                            onError={(e) => {
-                                                                const videoId = getYouTubeVideoId(video.url);
-                                                                if (videoId) {
-                                                                    // Try multiple fallback thumbnail qualities
-                                                                    if (e.target.src.includes('maxresdefault')) {
-                                                                        e.target.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-                                                                    } else if (e.target.src.includes('hqdefault')) {
-                                                                        e.target.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-                                                                    } else if (e.target.src.includes('mqdefault')) {
-                                                                        e.target.src = `https://img.youtube.com/vi/${videoId}/default.jpg`;
-                                                                    } else {
-                                                                        // If all thumbnails fail, hide the image and show gradient background
-                                                                        e.target.style.display = 'none';
-                                                                        e.target.parentElement.style.background = 'linear-gradient(135deg, #3b82f6, #8b5cf6)';
-                                                                    }
-                                                                }
-                                                            }}
-                                                        />
-                                                    ) : (
-                                                        <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600"></div>
-                                                    )}
+                                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                                            {module.title}
+                                        </h3>
+                                        <p className="text-gray-600 mb-6 leading-relaxed">
+                                            {module.description}
+                                        </p>
 
-                                                    {/* Dark overlay */}
-                                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300"></div>
-
-                                                    {/* Play button */}
-                                                    <a
-                                                        href={video.url}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="absolute inset-0 flex items-center justify-center z-10"
-                                                    >
-                                                        <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center text-red-600 hover:bg-white hover:scale-110 transition-all duration-300 shadow-lg">
-                                                            <svg className="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                                                                <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-                                                            </svg>
-                                                        </div>
-                                                    </a>
-
-                                                    {/* Duration badge */}
-                                                    <div className="absolute top-4 right-4 bg-black/80 text-white px-2 py-1 rounded text-sm font-medium">
-                                                        {video.duration}
-                                                    </div>
+                                        {/* Module Stats */}
+                                        <div className="grid grid-cols-2 gap-4 mb-6">
+                                            <div className="text-center">
+                                                <div className={`text-2xl font-bold mb-1 ${
+                                                    moduleIndex === 0 ? 'text-blue-600' :
+                                                    moduleIndex === 1 ? 'text-green-600' :
+                                                    'text-purple-600'
+                                                }`}>
+                                                    {module.videos.length}
                                                 </div>
-
-                                                {/* Video Info */}
-                                                <div className="p-6">
-                                                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                                                        {video.title}
-                                                    </h3>
-                                                    <p className="text-gray-600 text-sm leading-relaxed">
-                                                        {video.description}
-                                                    </p>
-                                                    <div className="mt-4">
-                                                        <a
-                                                            href={video.url}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm group-hover:translate-x-1 transition-all duration-300"
-                                                        >
-                                                            Watch Video
-                                                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                                <div className="text-gray-500 text-sm">Video Lessons</div>
                                             </div>
-                                        );
-                                    })}
-                                </div>
+                                            <div className="text-center">
+                                                <div className={`text-2xl font-bold mb-1 ${
+                                                    moduleIndex === 0 ? 'text-blue-600' :
+                                                    moduleIndex === 1 ? 'text-green-600' :
+                                                    'text-purple-600'
+                                                }`}>
+                                                    {moduleIndex === 0 ? 'Basic' : moduleIndex === 1 ? 'Core' : 'Pro'}
+                                                </div>
+                                                <div className="text-gray-500 text-sm">Level</div>
+                                            </div>
+                                        </div>
+
+                                        {/* CTA Button */}
+                                        <div className={`inline-flex items-center px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:shadow-lg ${
+                                            moduleIndex === 0 ? 'bg-blue-600 hover:bg-blue-700 text-white' :
+                                            moduleIndex === 1 ? 'bg-green-600 hover:bg-green-700 text-white' :
+                                            'bg-purple-600 hover:bg-purple-700 text-white'
+                                        }`}>
+                                            Start Module
+                                            <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </div>
+                                    </div>
+
+                                    {/* Video Preview */}
+                                    <div className="px-8 pb-8">
+                                        <div className="bg-gray-100 rounded-lg p-4">
+                                            <h4 className="font-medium text-gray-900 mb-2">Featured Lessons:</h4>
+                                            <ul className="space-y-1">
+                                                {module.videos.slice(0, 3).map((video, index) => (
+                                                    <li key={index} className="text-sm text-gray-600 flex items-center">
+                                                        <div className="w-2 h-2 bg-blue-400 rounded-full mr-2 flex-shrink-0"></div>
+                                                        <span className="truncate">{video.title.substring(0, 50)}...</span>
+                                                    </li>
+                                                ))}
+                                                {module.videos.length > 3 && (
+                                                    <li className="text-sm text-gray-500 font-medium">
+                                                        +{module.videos.length - 3} more lessons
+                                                    </li>
+                                                )}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </Link>
                             </div>
                         ))}
+                    </div>
+
+                    {/* Course Benefits */}
+                    <div className="mt-16 text-center">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-8">What You'll Learn</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div className="bg-white p-6 rounded-lg shadow-md">
+                                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <h4 className="font-semibold text-gray-900 mb-2">Quick Setup</h4>
+                                <p className="text-gray-600 text-sm">Get started with Storemate OMS in minutes</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-md">
+                                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <h4 className="font-semibold text-gray-900 mb-2">Order Management</h4>
+                                <p className="text-gray-600 text-sm">Master efficient order processing workflows</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-md">
+                                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                    </svg>
+                                </div>
+                                <h4 className="font-semibold text-gray-900 mb-2">Courier Integration</h4>
+                                <p className="text-gray-600 text-sm">Connect with delivery partners seamlessly</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-lg shadow-md">
+                                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                    <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                                    </svg>
+                                </div>
+                                <h4 className="font-semibold text-gray-900 mb-2">COD Business</h4>
+                                <p className="text-gray-600 text-sm">Set up Cash on Delivery operations</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

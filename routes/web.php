@@ -49,6 +49,18 @@ Route::get('/free-course', function () {
     return Inertia::render('FreeCourse');
 })->name('free.course');
 
+Route::get('/module-1', function () {
+    return Inertia::render('Module1');
+})->name('module.1');
+
+Route::get('/module-2', function () {
+    return Inertia::render('Module2');
+})->name('module.2');
+
+Route::get('/module-3', function () {
+    return Inertia::render('Module3');
+})->name('module.3');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

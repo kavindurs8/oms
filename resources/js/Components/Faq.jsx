@@ -90,8 +90,7 @@ const Faq = () => {
                     <p className="text-gray-600 text-lg">
                         Didn't find the answer you are looking for? {' '}
                         <a
-                            href="https://welcome.oms.storemate.cloud/register"
-                            target="_blank"
+                            href="/contact-us"
                             rel="noopener noreferrer"
                             className="font-medium text-blue-600 transition-all duration-200 hover:text-blue-700 focus:text-blue-700 hover:underline"
                         >

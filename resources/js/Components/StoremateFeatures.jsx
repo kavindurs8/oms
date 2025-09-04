@@ -19,7 +19,7 @@ export default function StoremateFeatures() {
             <div className={`transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Content */}
-                    <div className={`transition-all duration-1200 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+                    <div id="what-is-storemate-oms" className={`transition-all duration-1200 delay-300 ${isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
                         {/* Subtitle with same style as POWERING label */}
                         <div className="mb-4">
                             <span className="inline-block text-sm font-bold tracking-widest px-4 py-2 rounded-full" style={{

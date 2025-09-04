@@ -5,6 +5,7 @@ import Pricing from '@/Components/Pricing';
 import CallToAction from '@/Components/CallToAction';
 import Faq from '@/Components/Faq';
 import MainLayout from '@/Layouts/MainLayout';
+import TechnicalFaq from '@/Components/TechnicalFaq';
 
 export default function PricingPage({ auth }) {
     return (
@@ -12,7 +13,7 @@ export default function PricingPage({ auth }) {
             <Head title="Pricing - Storemate OMS" />
             <Header auth={auth} />
             <Pricing />
-            <Faq />
+            <TechnicalFaq />
             <CallToAction />
             <Footer />
         </MainLayout>

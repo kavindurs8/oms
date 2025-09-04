@@ -125,6 +125,16 @@ const CallToAction = () => {
                     </a>
 
                     <button
+                        onClick={() => {
+                            const section = document.getElementById('what-is-storemate-oms');
+                            if (section) {
+                                // If the section exists on current page, scroll to it
+                                section.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                                // If not on home page, navigate to home page with hash
+                                window.location.href = '/home#what-is-storemate-oms';
+                            }
+                        }}
                         className="border-2 px-6 py-3 rounded-lg font-medium text-base transition-all duration-300 inline-flex items-center space-x-2"
                         style={{
                             borderColor: '#013387',

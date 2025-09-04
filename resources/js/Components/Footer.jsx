@@ -23,7 +23,7 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <a href="https://www.facebook.com/share/19XzgwGiNd/" target="_blank" rel="noopener noreferrer" title="Facebook" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                                <a href="https://www.facebook.com/storemateinventory" target="_blank" rel="noopener noreferrer" title="Facebook" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
                                     <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path>
                                     </svg>
@@ -46,6 +46,14 @@ const Footer = () => {
                                 <a href="https://lk.linkedin.com/showcase/storemate-oms-system/" target="_blank" rel="noopener noreferrer" title="LinkedIn" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-700 focus:bg-blue-700">
                                     <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://www.tiktok.com/@storemate_" target="_blank" rel="noopener noreferrer" title="TikTok" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-black focus:bg-black">
+                                    <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                                     </svg>
                                 </a>
                             </li>
@@ -79,11 +87,11 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">Help</p>
+                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">Quick Links</p>
 
                         <ul className="mt-6 space-y-4">
                             <li>
-                                <Link href="/inquiry" title="Inquiry" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Inquiry</Link>
+                                <Link href="/inquiry" title="Inquiry" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Inquiry Management</Link>
                             </li>
 
                             <li>
@@ -95,7 +103,11 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <Link href="/user-contact-product" title="User, Contact, Product" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">User, Contact, Product</Link>
+                                <Link href="/user-contact-product" title="User, Contact, Product" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">User & Contact</Link>
+                            </li>
+
+                            <li>
+                                <Link href="/partner-program" title="Partner Program" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">Partner Program</Link>
                             </li>
                         </ul>
                     </div>
@@ -127,7 +139,17 @@ const Footer = () => {
 
                 <hr className="mt-16 mb-10 border-gray-200" />
 
-                <p className="text-sm text-center text-gray-600">© Copyright 2025, All Rights Reserved by Storemate OMS</p>
+                <p className="text-sm text-center text-gray-600">
+                    © Copyright 2025, All Rights Reserved by Storemate OMS | Product by{' '}
+                    <a
+                        href="https://parallaxtec.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 transition-colors duration-200"
+                    >
+                        Parallax Technologies
+                    </a>
+                </p>
             </div>
         </section>
     );

@@ -16,7 +16,7 @@ export default function StoremateInfo() {
     }, []);
 
     return (
-        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div  className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
             <div className={`rounded-3xl p-8 md:p-12 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{backgroundColor: '#E6F7FF'}}>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     {/* Left Content */}

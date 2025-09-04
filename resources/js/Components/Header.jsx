@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function Header({ auth }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
+    const [showingMobileFeaturesDropdown, setShowingMobileFeaturesDropdown] = useState(false);
 
     return (
         <nav className="shadow-sm relative z-[9999]">
@@ -46,6 +47,9 @@ export default function Header({ auth }) {
                                 <NavLink href={route('free.course')} active={route().current('free.course')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                     Free Course
                                 </NavLink>
+                                <NavLink href={route('contact.us')} active={route().current('contact.us')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
+                                    Contact Us
+                                </NavLink>
                                 <NavLink href={route('partner.program')} active={route().current('partner.program')} className="text-sm font-medium text-gray-500 hover:text-gray-700">
                                     Partner Program
                                 </NavLink>
@@ -62,6 +66,14 @@ export default function Header({ auth }) {
                             </Dropdown.Trigger>
                             <Dropdown.Content>
                                 <a
+                                    href="https://oms.storemate.cloud/login"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
+                                >
+                                    Login to OMS
+                                </a>
+                                <a
                                     href="https://app.storemate.cloud/login"
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -77,22 +89,8 @@ export default function Header({ auth }) {
                                 >
                                     Login to POS (Pro)
                                 </a>
-                                <a
-                                    href="https://oms.storemate.cloud/login"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:bg-gray-100 focus:outline-none"
-                                >
-                                    Login to OMS
-                                </a>
                             </Dropdown.Content>
                         </Dropdown>
-                        <Link
-                            href={route('contact.us')}
-                            className="ml-4 inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-bold text-gray-700 shadow-sm hover:bg-gray-50"
-                        >
-                            Contact Us
-                        </Link>
                         <a
                             href="https://welcome.oms.storemate.cloud/register"
                             target="_blank"
@@ -143,33 +141,89 @@ export default function Header({ auth }) {
                     <NavLink href={route('free.course')} active={route().current('free.course')} block="true">
                         Free Course
                     </NavLink>
-                    <NavLink href="#" block="true">
-                        Features
+                    <NavLink href={route('contact.us')} active={route().current('contact.us')} block="true">
+                        Contact Us
                     </NavLink>
+
+                    {/* Mobile Features Dropdown */}
+                    <div>
+                        <button
+                            onClick={() => setShowingMobileFeaturesDropdown((previousState) => !previousState)}
+                            className="flex items-center justify-between w-full px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50 focus:outline-none focus:text-gray-800 focus:bg-gray-50 transition duration-150 ease-in-out"
+                        >
+                            <span>Features</span>
+                            <svg
+                                className={`h-4 w-4 transition-transform duration-200 ${showingMobileFeaturesDropdown ? 'rotate-180' : ''}`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                            >
+                                <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                        </button>
+                        {showingMobileFeaturesDropdown && (
+                            <div className="pl-8 pb-2 space-y-1">
+                                <NavLink href="/inquiry" block="true" className="text-sm">
+                                    Inquiry
+                                </NavLink>
+                                <NavLink href={route('sales.management')} active={route().current('sales.management')} block="true" className="text-sm">
+                                    Sales Management
+                                </NavLink>
+                                <NavLink href={route('shipping.packing')} active={route().current('shipping.packing')} block="true" className="text-sm">
+                                    Shipping & Packing
+                                </NavLink>
+                                <NavLink href={route('user.contact.product')} active={route().current('user.contact.product')} block="true" className="text-sm">
+                                    User, Contact, Product
+                                </NavLink>
+                            </div>
+                        )}
+                    </div>
+
                     <NavLink href={route('partner.program')} active={route().current('partner.program')} block="true">
                         Partner Program
                     </NavLink>
                 </div>
 
                 <div className="pt-4 pb-1 border-t border-gray-200">
-                    <div className="px-4">
-                        <div className="font-medium text-base text-gray-800">
-                            {auth.user ? auth.user.name : 'Guest'}
-                        </div>
-                        <div className="font-medium text-sm text-gray-500">
-                            {auth.user ? auth.user.email : ''}
-                        </div>
-                    </div>
-
                     <div className="mt-3 space-y-1">
-                        <NavLink href={route('login')} block="true">Login</NavLink>
+                        {/* Mobile Login Options */}
+                        <div className="px-4 py-2">
+                            <div className="font-medium text-base text-gray-800 mb-2">Login Options</div>
+                            <div className="space-y-2">
+                                <a
+                                    href="https://oms.storemate.cloud/login"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded"
+                                >
+                                    Login to OMS
+                                </a>
+                                <a
+                                    href="https://app.storemate.cloud/login"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded"
+                                >
+                                    Login to POS (Lite)
+                                </a>
+                                <a
+                                    href="https://app.storematepro.lk/login"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 rounded"
+                                >
+                                    Login to POS (Pro)
+                                </a>
+                            </div>
+                        </div>
+
                         <a
                             href="https://welcome.oms.storemate.cloud/register"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+                            className="block mx-4 mt-4 px-4 py-2 text-center font-bold text-white bg-custom-blue-2 hover:bg-custom-blue-3 rounded-md"
                         >
-                            Register
+                            Start a Free Trial
                         </a>
                     </div>
                 </div>
